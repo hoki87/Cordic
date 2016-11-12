@@ -1,0 +1,7 @@
+verilog work "../src/op_quad_adj.v"
+verilog work "../src/ip_quad_info.v"
+verilog work "../src/ip_quad_adj.v"
+verilog work "../src/cordic_core.v"
+verilog work "../src/cordic_gain_corr.v"
+verilog work "../src/cordic.v"
+verilog work "../src/cordic_top.v"

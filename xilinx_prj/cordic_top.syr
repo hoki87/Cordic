@@ -1,0 +1,1361 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.49 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.50 secs
+ 
+--> Reading design: cordic_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cordic_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cordic_top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : cordic_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\op_quad_adj.v" into library work
+Parsing module <op_quad_adj>.
+Parsing verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\/cordic_inc.v" included at line 83.
+Analyzing Verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\ip_quad_info.v" into library work
+Parsing module <ip_quad_info>.
+Parsing verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\/cordic_inc.v" included at line 69.
+Analyzing Verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\ip_quad_adj.v" into library work
+Parsing module <ip_quad_adj>.
+Parsing verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\/cordic_inc.v" included at line 78.
+Analyzing Verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_core.v" into library work
+Parsing module <cordic_core>.
+Parsing verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\/cordic_inc.v" included at line 71.
+Analyzing Verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_gain_corr.v" into library work
+Parsing module <cordic_gain_corr>.
+Parsing verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\/cordic_inc.v" included at line 110.
+Analyzing Verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic.v" into library work
+Parsing module <cordic>.
+Parsing verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\/cordic_inc.v" included at line 116.
+Analyzing Verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_top.v" into library work
+Parsing module <cordic_top>.
+Parsing verilog file "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\/cordic_inc.v" included at line 36.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <cordic_top>.
+
+Elaborating module <cordic>.
+
+Elaborating module <ip_quad_info>.
+
+Elaborating module <ip_quad_adj>.
+
+Elaborating module <cordic_core>.
+
+Elaborating module <op_quad_adj>.
+
+Elaborating module <cordic_gain_corr>.
+WARNING:HDLCompiler:1127 - "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_top.v" Line 109: Assignment to gain_corr_z ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <cordic_top>.
+    Related source file is "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_top.v".
+        XY_WIDTH = 18
+        Z_WIDTH = 18
+        ITER = 16
+        ATAN_0 = 18'b001000000000000000
+        ATAN_1 = 18'b000100101110010000
+        ATAN_2 = 18'b000010011111101101
+        ATAN_3 = 18'b000001010001000100
+        ATAN_4 = 18'b000000101000101100
+        ATAN_5 = 18'b000000010100010111
+        ATAN_6 = 18'b000000001010001100
+        ATAN_7 = 18'b000000000101000110
+        ATAN_8 = 18'b000000000010100011
+        ATAN_9 = 18'b000000000001010001
+        ATAN_10 = 18'b000000000000101001
+        ATAN_11 = 18'b000000000000010100
+        ATAN_12 = 18'b000000000000001010
+        ATAN_13 = 18'b000000000000000101
+        ATAN_14 = 18'b000000000000000011
+        ATAN_15 = 18'b000000000000000001
+        ATAN_16 = 18'b000000000000000001
+        ATAN_17 = 18'b000000000000000000
+        ATAN_18 = 18'b000000000000000000
+        ATAN_19 = 18'b000000000000000000
+        ATAN_20 = 18'b000000000000000000
+        ATAN_21 = 18'b000000000000000000
+        ATAN_22 = 18'b000000000000000000
+        ATAN_23 = 18'b000000000000000000
+        ATAN_24 = 18'b000000000000000000
+        ATAN_25 = 18'b000000000000000000
+        ATAN_26 = 18'b000000000000000000
+        ATAN_27 = 18'b000000000000000000
+        ATAN_28 = 18'b000000000000000000
+        ATAN_29 = 18'b000000000000000000
+        ATAN_30 = 18'b000000000000000000
+        ATAN_31 = 18'b000000000000000000
+        X_GAIN_EXT_BITS = 0
+        GAIN_MODEL = 1
+        RECIP_GAIN = 32'b01111111111111111111111111111111
+        Z_ONE = 18'b000000000000000001
+        PI_NEG = 18'b100000000000000000
+        PI_POS = 18'b100000000000000000
+        PI2_POS = 18'b010000000000000000
+        PI2_NEG = 18'b110000000000000000
+        QUAD1 = 2'b00
+        QUAD2 = 2'b01
+        QUAD3 = 2'b10
+        QUAD4 = 2'b11
+        GAIN_COMP1_LAT = 6
+        GAIN_COMP2_LAT = 3
+INFO:Xst:3210 - "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_top.v" line 94: Output port <z_out> of the instance <u_cordic_gain_corr1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_top.v" line 94: Output port <rotnvec_mode_out> of the instance <u_cordic_gain_corr1> is unconnected or connected to loadless signal.
+    Found 19-bit register for signal <gain_mode_delay>.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+Unit <cordic_top> synthesized.
+
+Synthesizing Unit <cordic>.
+    Related source file is "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic.v".
+        XY_WIDTH = 18
+        Z_WIDTH = 18
+        ITER = 16
+        ATAN_0 = 18'b001000000000000000
+        ATAN_1 = 18'b000100101110010000
+        ATAN_2 = 18'b000010011111101101
+        ATAN_3 = 18'b000001010001000100
+        ATAN_4 = 18'b000000101000101100
+        ATAN_5 = 18'b000000010100010111
+        ATAN_6 = 18'b000000001010001100
+        ATAN_7 = 18'b000000000101000110
+        ATAN_8 = 18'b000000000010100011
+        ATAN_9 = 18'b000000000001010001
+        ATAN_10 = 18'b000000000000101001
+        ATAN_11 = 18'b000000000000010100
+        ATAN_12 = 18'b000000000000001010
+        ATAN_13 = 18'b000000000000000101
+        ATAN_14 = 18'b000000000000000011
+        ATAN_15 = 18'b000000000000000001
+        ATAN_16 = 18'b000000000000000001
+        ATAN_17 = 18'b000000000000000000
+        ATAN_18 = 18'b000000000000000000
+        ATAN_19 = 18'b000000000000000000
+        ATAN_20 = 18'b000000000000000000
+        ATAN_21 = 18'b000000000000000000
+        ATAN_22 = 18'b000000000000000000
+        ATAN_23 = 18'b000000000000000000
+        ATAN_24 = 18'b000000000000000000
+        ATAN_25 = 18'b000000000000000000
+        ATAN_26 = 18'b000000000000000000
+        ATAN_27 = 18'b000000000000000000
+        ATAN_28 = 18'b000000000000000000
+        ATAN_29 = 18'b000000000000000000
+        ATAN_30 = 18'b000000000000000000
+        ATAN_31 = 18'b000000000000000000
+        X_GAIN_EXT_BITS = 0
+        GAIN_MODEL = 1
+        RECIP_GAIN = 32'b01111111111111111111111111111111
+        Z_ONE = 18'b000000000000000001
+        PI_NEG = 18'b100000000000000000
+        PI_POS = 18'b100000000000000000
+        PI2_POS = 18'b010000000000000000
+        PI2_NEG = 18'b110000000000000000
+        QUAD1 = 2'b00
+        QUAD2 = 2'b01
+        QUAD3 = 2'b10
+        QUAD4 = 2'b11
+        GAIN_COMP1_LAT = 6
+        GAIN_COMP2_LAT = 3
+    Found 18-bit register for signal <x_in_r>.
+    Found 18-bit register for signal <y_in_r>.
+    Found 18-bit register for signal <z_in_r>.
+    Found 18-bit register for signal <x_out>.
+    Found 18-bit register for signal <y_out>.
+    Found 18-bit register for signal <z_out>.
+    Found 1-bit register for signal <rotnvec_mode_r>.
+    Summary:
+	inferred 109 D-type flip-flop(s).
+Unit <cordic> synthesized.
+
+Synthesizing Unit <ip_quad_info>.
+    Related source file is "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\ip_quad_info.v".
+        XY_WIDTH = 18
+        Z_WIDTH = 18
+        ITER = 16
+        ATAN_0 = 18'b001000000000000000
+        ATAN_1 = 18'b000100101110010000
+        ATAN_2 = 18'b000010011111101101
+        ATAN_3 = 18'b000001010001000100
+        ATAN_4 = 18'b000000101000101100
+        ATAN_5 = 18'b000000010100010111
+        ATAN_6 = 18'b000000001010001100
+        ATAN_7 = 18'b000000000101000110
+        ATAN_8 = 18'b000000000010100011
+        ATAN_9 = 18'b000000000001010001
+        ATAN_10 = 18'b000000000000101001
+        ATAN_11 = 18'b000000000000010100
+        ATAN_12 = 18'b000000000000001010
+        ATAN_13 = 18'b000000000000000101
+        ATAN_14 = 18'b000000000000000011
+        ATAN_15 = 18'b000000000000000001
+        ATAN_16 = 18'b000000000000000001
+        ATAN_17 = 18'b000000000000000000
+        ATAN_18 = 18'b000000000000000000
+        ATAN_19 = 18'b000000000000000000
+        ATAN_20 = 18'b000000000000000000
+        ATAN_21 = 18'b000000000000000000
+        ATAN_22 = 18'b000000000000000000
+        ATAN_23 = 18'b000000000000000000
+        ATAN_24 = 18'b000000000000000000
+        ATAN_25 = 18'b000000000000000000
+        ATAN_26 = 18'b000000000000000000
+        ATAN_27 = 18'b000000000000000000
+        ATAN_28 = 18'b000000000000000000
+        ATAN_29 = 18'b000000000000000000
+        ATAN_30 = 18'b000000000000000000
+        ATAN_31 = 18'b000000000000000000
+        X_GAIN_EXT_BITS = 0
+        GAIN_MODEL = 1
+        RECIP_GAIN = 32'b01111111111111111111111111111111
+        Z_ONE = 18'b000000000000000001
+        PI_NEG = 18'b100000000000000000
+        PI_POS = 18'b100000000000000000
+        PI2_POS = 18'b010000000000000000
+        PI2_NEG = 18'b110000000000000000
+        QUAD1 = 2'b00
+        QUAD2 = 2'b01
+        QUAD3 = 2'b10
+        QUAD4 = 2'b11
+        GAIN_COMP1_LAT = 6
+        GAIN_COMP2_LAT = 3
+    Found 18-bit comparator lessequal for signal <n0000> created at line 89
+    Found 18-bit comparator greater for signal <z_in[17]_PWR_3_o_LessThan_2_o> created at line 93
+    Found 18-bit comparator greater for signal <z_in[17]_PWR_3_o_LessThan_3_o> created at line 97
+    Summary:
+	inferred   3 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <ip_quad_info> synthesized.
+
+Synthesizing Unit <ip_quad_adj>.
+    Related source file is "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\ip_quad_adj.v".
+        XY_WIDTH = 18
+        Z_WIDTH = 18
+        ITER = 16
+        ATAN_0 = 18'b001000000000000000
+        ATAN_1 = 18'b000100101110010000
+        ATAN_2 = 18'b000010011111101101
+        ATAN_3 = 18'b000001010001000100
+        ATAN_4 = 18'b000000101000101100
+        ATAN_5 = 18'b000000010100010111
+        ATAN_6 = 18'b000000001010001100
+        ATAN_7 = 18'b000000000101000110
+        ATAN_8 = 18'b000000000010100011
+        ATAN_9 = 18'b000000000001010001
+        ATAN_10 = 18'b000000000000101001
+        ATAN_11 = 18'b000000000000010100
+        ATAN_12 = 18'b000000000000001010
+        ATAN_13 = 18'b000000000000000101
+        ATAN_14 = 18'b000000000000000011
+        ATAN_15 = 18'b000000000000000001
+        ATAN_16 = 18'b000000000000000001
+        ATAN_17 = 18'b000000000000000000
+        ATAN_18 = 18'b000000000000000000
+        ATAN_19 = 18'b000000000000000000
+        ATAN_20 = 18'b000000000000000000
+        ATAN_21 = 18'b000000000000000000
+        ATAN_22 = 18'b000000000000000000
+        ATAN_23 = 18'b000000000000000000
+        ATAN_24 = 18'b000000000000000000
+        ATAN_25 = 18'b000000000000000000
+        ATAN_26 = 18'b000000000000000000
+        ATAN_27 = 18'b000000000000000000
+        ATAN_28 = 18'b000000000000000000
+        ATAN_29 = 18'b000000000000000000
+        ATAN_30 = 18'b000000000000000000
+        ATAN_31 = 18'b000000000000000000
+        X_GAIN_EXT_BITS = 0
+        GAIN_MODEL = 1
+        RECIP_GAIN = 32'b01111111111111111111111111111111
+        Z_ONE = 18'b000000000000000001
+        PI_NEG = 18'b100000000000000000
+        PI_POS = 18'b100000000000000000
+        PI2_POS = 18'b010000000000000000
+        PI2_NEG = 18'b110000000000000000
+        QUAD1 = 2'b00
+        QUAD2 = 2'b01
+        QUAD3 = 2'b10
+        QUAD4 = 2'b11
+        GAIN_COMP1_LAT = 6
+        GAIN_COMP2_LAT = 3
+    Found 18-bit adder for signal <x_in[17]_GND_4_o_add_3_OUT> created at line 102.
+    Found 18-bit adder for signal <PWR_4_o_z_in[17]_add_9_OUT> created at line 189.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
+Unit <ip_quad_adj> synthesized.
+
+Synthesizing Unit <cordic_core>.
+    Related source file is "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_core.v".
+        XY_WIDTH = 18
+        Z_WIDTH = 18
+        ITER = 16
+        ATAN_0 = 18'b001000000000000000
+        ATAN_1 = 18'b000100101110010000
+        ATAN_2 = 18'b000010011111101101
+        ATAN_3 = 18'b000001010001000100
+        ATAN_4 = 18'b000000101000101100
+        ATAN_5 = 18'b000000010100010111
+        ATAN_6 = 18'b000000001010001100
+        ATAN_7 = 18'b000000000101000110
+        ATAN_8 = 18'b000000000010100011
+        ATAN_9 = 18'b000000000001010001
+        ATAN_10 = 18'b000000000000101001
+        ATAN_11 = 18'b000000000000010100
+        ATAN_12 = 18'b000000000000001010
+        ATAN_13 = 18'b000000000000000101
+        ATAN_14 = 18'b000000000000000011
+        ATAN_15 = 18'b000000000000000001
+        ATAN_16 = 18'b000000000000000001
+        ATAN_17 = 18'b000000000000000000
+        ATAN_18 = 18'b000000000000000000
+        ATAN_19 = 18'b000000000000000000
+        ATAN_20 = 18'b000000000000000000
+        ATAN_21 = 18'b000000000000000000
+        ATAN_22 = 18'b000000000000000000
+        ATAN_23 = 18'b000000000000000000
+        ATAN_24 = 18'b000000000000000000
+        ATAN_25 = 18'b000000000000000000
+        ATAN_26 = 18'b000000000000000000
+        ATAN_27 = 18'b000000000000000000
+        ATAN_28 = 18'b000000000000000000
+        ATAN_29 = 18'b000000000000000000
+        ATAN_30 = 18'b000000000000000000
+        ATAN_31 = 18'b000000000000000000
+        X_GAIN_EXT_BITS = 0
+        GAIN_MODEL = 1
+        RECIP_GAIN = 32'b01111111111111111111111111111111
+        Z_ONE = 18'b000000000000000001
+        PI_NEG = 18'b100000000000000000
+        PI_POS = 18'b100000000000000000
+        PI2_POS = 18'b010000000000000000
+        PI2_NEG = 18'b110000000000000000
+        QUAD1 = 2'b00
+        QUAD2 = 2'b01
+        QUAD3 = 2'b10
+        QUAD4 = 2'b11
+        GAIN_COMP1_LAT = 6
+        GAIN_COMP2_LAT = 3
+    Found 17-bit register for signal <rotnvec_mode_pipe>.
+    Found 34-bit register for signal <n0308>.
+    Found 306-bit register for signal <n0309>.
+    Found 306-bit register for signal <n0310>.
+    Found 306-bit register for signal <n0311>.
+    Found 18-bit subtractor for signal <x_in_pipe[0][17]_y_in_pipe[0][17]_sub_7_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[0][17]_x_in_pipe[0][17]_sub_10_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[0][17]_GND_5_o_sub_13_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[1][17]_y_in_pipe[1][17]_sub_21_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[1][17]_x_in_pipe[1][17]_sub_24_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[1][17]_GND_5_o_sub_27_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[2][17]_y_in_pipe[2][17]_sub_35_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[2][17]_x_in_pipe[2][17]_sub_38_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[2][17]_GND_5_o_sub_41_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[3][17]_y_in_pipe[3][17]_sub_49_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[3][17]_x_in_pipe[3][17]_sub_52_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[3][17]_GND_5_o_sub_55_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[4][17]_y_in_pipe[4][17]_sub_63_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[4][17]_x_in_pipe[4][17]_sub_66_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[4][17]_GND_5_o_sub_69_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[5][17]_y_in_pipe[5][17]_sub_77_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[5][17]_x_in_pipe[5][17]_sub_80_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[5][17]_GND_5_o_sub_83_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[6][17]_y_in_pipe[6][17]_sub_91_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[6][17]_x_in_pipe[6][17]_sub_94_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[6][17]_GND_5_o_sub_97_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[7][17]_y_in_pipe[7][17]_sub_105_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[7][17]_x_in_pipe[7][17]_sub_108_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[7][17]_GND_5_o_sub_111_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[8][17]_y_in_pipe[8][17]_sub_119_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[8][17]_x_in_pipe[8][17]_sub_122_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[8][17]_GND_5_o_sub_125_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[9][17]_y_in_pipe[9][17]_sub_133_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[9][17]_x_in_pipe[9][17]_sub_136_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[9][17]_GND_5_o_sub_139_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[10][17]_y_in_pipe[10][17]_sub_147_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[10][17]_x_in_pipe[10][17]_sub_150_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[10][17]_GND_5_o_sub_153_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[11][17]_y_in_pipe[11][17]_sub_161_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[11][17]_x_in_pipe[11][17]_sub_164_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[11][17]_GND_5_o_sub_167_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[12][17]_y_in_pipe[12][17]_sub_175_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[12][17]_x_in_pipe[12][17]_sub_178_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[12][17]_GND_5_o_sub_181_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[13][17]_y_in_pipe[13][17]_sub_189_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[13][17]_x_in_pipe[13][17]_sub_192_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[13][17]_GND_5_o_sub_195_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[14][17]_y_in_pipe[14][17]_sub_203_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[14][17]_x_in_pipe[14][17]_sub_206_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[14][17]_GND_5_o_sub_209_OUT> created at line 191.
+    Found 18-bit subtractor for signal <x_in_pipe[15][17]_y_in_pipe[15][17]_sub_217_OUT> created at line 157.
+    Found 18-bit subtractor for signal <y_in_pipe[15][17]_x_in_pipe[15][17]_sub_220_OUT> created at line 157.
+    Found 18-bit subtractor for signal <z_in_pipe[15][17]_GND_5_o_sub_223_OUT> created at line 191.
+    Found 18-bit adder for signal <x_in_pipe[0][17]_y_in_pipe[0][17]_add_5_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[0][17]_GND_5_o_add_11_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[1][17]_y_in_pipe[1][17]_add_19_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[1][17]_x_in_pipe[1][17]_add_22_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[1][17]_GND_5_o_add_25_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[2][17]_y_in_pipe[2][17]_add_33_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[2][17]_x_in_pipe[2][17]_add_36_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[2][17]_GND_5_o_add_39_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[3][17]_y_in_pipe[3][17]_add_47_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[3][17]_x_in_pipe[3][17]_add_50_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[3][17]_GND_5_o_add_53_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[4][17]_y_in_pipe[4][17]_add_61_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[4][17]_x_in_pipe[4][17]_add_64_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[4][17]_GND_5_o_add_67_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[5][17]_y_in_pipe[5][17]_add_75_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[5][17]_x_in_pipe[5][17]_add_78_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[5][17]_GND_5_o_add_81_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[6][17]_y_in_pipe[6][17]_add_89_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[6][17]_x_in_pipe[6][17]_add_92_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[6][17]_GND_5_o_add_95_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[7][17]_y_in_pipe[7][17]_add_103_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[7][17]_x_in_pipe[7][17]_add_106_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[7][17]_GND_5_o_add_109_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[8][17]_y_in_pipe[8][17]_add_117_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[8][17]_x_in_pipe[8][17]_add_120_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[8][17]_GND_5_o_add_123_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[9][17]_y_in_pipe[9][17]_add_131_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[9][17]_x_in_pipe[9][17]_add_134_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[9][17]_GND_5_o_add_137_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[10][17]_y_in_pipe[10][17]_add_145_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[10][17]_x_in_pipe[10][17]_add_148_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[10][17]_GND_5_o_add_151_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[11][17]_y_in_pipe[11][17]_add_159_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[11][17]_x_in_pipe[11][17]_add_162_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[11][17]_GND_5_o_add_165_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[12][17]_y_in_pipe[12][17]_add_173_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[12][17]_x_in_pipe[12][17]_add_176_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[12][17]_GND_5_o_add_179_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[13][17]_y_in_pipe[13][17]_add_187_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[13][17]_x_in_pipe[13][17]_add_190_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[13][17]_GND_5_o_add_193_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[14][17]_y_in_pipe[14][17]_add_201_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[14][17]_x_in_pipe[14][17]_add_204_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[14][17]_GND_5_o_add_207_OUT> created at line 189.
+    Found 18-bit adder for signal <x_in_pipe[15][17]_y_in_pipe[15][17]_add_215_OUT> created at line 155.
+    Found 18-bit adder for signal <y_in_pipe[15][17]_x_in_pipe[15][17]_add_218_OUT> created at line 155.
+    Found 18-bit adder for signal <z_in_pipe[15][17]_GND_5_o_add_221_OUT> created at line 189.
+    Summary:
+	inferred  48 Adder/Subtractor(s).
+	inferred 969 D-type flip-flop(s).
+Unit <cordic_core> synthesized.
+
+Synthesizing Unit <op_quad_adj>.
+    Related source file is "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\op_quad_adj.v".
+        XY_WIDTH = 18
+        Z_WIDTH = 18
+        ITER = 16
+        ATAN_0 = 18'b001000000000000000
+        ATAN_1 = 18'b000100101110010000
+        ATAN_2 = 18'b000010011111101101
+        ATAN_3 = 18'b000001010001000100
+        ATAN_4 = 18'b000000101000101100
+        ATAN_5 = 18'b000000010100010111
+        ATAN_6 = 18'b000000001010001100
+        ATAN_7 = 18'b000000000101000110
+        ATAN_8 = 18'b000000000010100011
+        ATAN_9 = 18'b000000000001010001
+        ATAN_10 = 18'b000000000000101001
+        ATAN_11 = 18'b000000000000010100
+        ATAN_12 = 18'b000000000000001010
+        ATAN_13 = 18'b000000000000000101
+        ATAN_14 = 18'b000000000000000011
+        ATAN_15 = 18'b000000000000000001
+        ATAN_16 = 18'b000000000000000001
+        ATAN_17 = 18'b000000000000000000
+        ATAN_18 = 18'b000000000000000000
+        ATAN_19 = 18'b000000000000000000
+        ATAN_20 = 18'b000000000000000000
+        ATAN_21 = 18'b000000000000000000
+        ATAN_22 = 18'b000000000000000000
+        ATAN_23 = 18'b000000000000000000
+        ATAN_24 = 18'b000000000000000000
+        ATAN_25 = 18'b000000000000000000
+        ATAN_26 = 18'b000000000000000000
+        ATAN_27 = 18'b000000000000000000
+        ATAN_28 = 18'b000000000000000000
+        ATAN_29 = 18'b000000000000000000
+        ATAN_30 = 18'b000000000000000000
+        ATAN_31 = 18'b000000000000000000
+        X_GAIN_EXT_BITS = 0
+        GAIN_MODEL = 1
+        RECIP_GAIN = 32'b01111111111111111111111111111111
+        Z_ONE = 18'b000000000000000001
+        PI_NEG = 18'b100000000000000000
+        PI_POS = 18'b100000000000000000
+        PI2_POS = 18'b010000000000000000
+        PI2_NEG = 18'b110000000000000000
+        QUAD1 = 2'b00
+        QUAD2 = 2'b01
+        QUAD3 = 2'b10
+        QUAD4 = 2'b11
+        GAIN_COMP1_LAT = 6
+        GAIN_COMP2_LAT = 3
+    Found 18-bit subtractor for signal <PWR_7_o_z_out[17]_sub_13_OUT> created at line 191.
+    Found 18-bit adder for signal <x_out[17]_GND_7_o_add_4_OUT> created at line 108.
+    Found 18-bit adder for signal <y_out[17]_GND_7_o_add_6_OUT> created at line 109.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred   3 Multiplexer(s).
+Unit <op_quad_adj> synthesized.
+
+Synthesizing Unit <cordic_gain_corr>.
+    Related source file is "\\vmware-host\shared folders\mainpc\onedrive\works\Cordic\FPGA\src\cordic_gain_corr.v".
+        XY_WIDTH = 18
+        Z_WIDTH = 18
+        ITER = 16
+        ATAN_0 = 18'b001000000000000000
+        ATAN_1 = 18'b000100101110010000
+        ATAN_2 = 18'b000010011111101101
+        ATAN_3 = 18'b000001010001000100
+        ATAN_4 = 18'b000000101000101100
+        ATAN_5 = 18'b000000010100010111
+        ATAN_6 = 18'b000000001010001100
+        ATAN_7 = 18'b000000000101000110
+        ATAN_8 = 18'b000000000010100011
+        ATAN_9 = 18'b000000000001010001
+        ATAN_10 = 18'b000000000000101001
+        ATAN_11 = 18'b000000000000010100
+        ATAN_12 = 18'b000000000000001010
+        ATAN_13 = 18'b000000000000000101
+        ATAN_14 = 18'b000000000000000011
+        ATAN_15 = 18'b000000000000000001
+        ATAN_16 = 18'b000000000000000001
+        ATAN_17 = 18'b000000000000000000
+        ATAN_18 = 18'b000000000000000000
+        ATAN_19 = 18'b000000000000000000
+        ATAN_20 = 18'b000000000000000000
+        ATAN_21 = 18'b000000000000000000
+        ATAN_22 = 18'b000000000000000000
+        ATAN_23 = 18'b000000000000000000
+        ATAN_24 = 18'b000000000000000000
+        ATAN_25 = 18'b000000000000000000
+        ATAN_26 = 18'b000000000000000000
+        ATAN_27 = 18'b000000000000000000
+        ATAN_28 = 18'b000000000000000000
+        ATAN_29 = 18'b000000000000000000
+        ATAN_30 = 18'b000000000000000000
+        ATAN_31 = 18'b000000000000000000
+        X_GAIN_EXT_BITS = 0
+        GAIN_MODEL = 1
+        RECIP_GAIN = 32'b01111111111111111111111111111111
+        Z_ONE = 18'b000000000000000001
+        PI_NEG = 18'b100000000000000000
+        PI_POS = 18'b100000000000000000
+        PI2_POS = 18'b010000000000000000
+        PI2_NEG = 18'b110000000000000000
+        QUAD1 = 2'b00
+        QUAD2 = 2'b01
+        QUAD3 = 2'b10
+        QUAD4 = 2'b11
+        GAIN_COMP1_LAT = 6
+        GAIN_COMP2_LAT = 3
+        MULT_WIDTH = 36
+WARNING:Xst - Value "1" of property "preserve" is not applicable. List of valid values is "true, false, yes, no" 
+WARNING:Xst - Value "1" of property "preserve" is not applicable. List of valid values is "true, false, yes, no" 
+WARNING:Xst - Value "1" of property "preserve" is not applicable. List of valid values is "true, false, yes, no" 
+    Found 90-bit register for signal <n0108>.
+    Found 90-bit register for signal <n0109>.
+    Found 90-bit register for signal <n0110>.
+    Found 5-bit register for signal <rotnvec_in_shift>.
+    Found 5-bit register for signal <comp_mode_shift>.
+    Found 18-bit register for signal <x_out_mod1>.
+    Found 18-bit register for signal <y_out_mod1>.
+    Found 18-bit register for signal <z_out_mod1>.
+    Found 18-bit register for signal <sum1_3_pipe1>.
+    Found 18-bit register for signal <sum6_9_pipe1>.
+    Found 18-bit register for signal <sum17_n15_pipe2>.
+    Found 18-bit register for signal <sum19_m1_3_pipe2>.
+    Found 18-bit register for signal <sum1_3_n6_n9_pipe2>.
+    Found 18-bit register for signal <sum_int1_pipe3>.
+    Found 18-bit register for signal <sum17_n15_19_m_pipe3>.
+    Found 18-bit register for signal <sum22_24_pipe3>.
+    Found 18-bit register for signal <sum30_32_pipe3>.
+    Found 18-bit register for signal <sum_int1_pipe4>.
+    Found 18-bit register for signal <sum_int2_pipe4>.
+    Found 18-bit register for signal <ysum1_3_pipe1>.
+    Found 18-bit register for signal <ysum6_9_pipe1>.
+    Found 18-bit register for signal <ysum17_n15_pipe2>.
+    Found 18-bit register for signal <ysum19_m1_3_pipe2>.
+    Found 18-bit register for signal <ysum1_3_n6_n9_pipe2>.
+    Found 18-bit register for signal <ysum_int1_pipe3>.
+    Found 18-bit register for signal <ysum17_n15_19_m_pipe3>.
+    Found 18-bit register for signal <ysum22_24_pipe3>.
+    Found 18-bit register for signal <ysum30_32_pipe3>.
+    Found 18-bit register for signal <ysum_int1_pipe4>.
+    Found 18-bit register for signal <ysum_int2_pipe4>.
+    Found 12-bit register for signal <x_rshift9_r<17:6>>.
+    Found 12-bit register for signal <y_rshift9_r<17:6>>.
+    Found 15-bit register for signal <x_rshift19_r<17:3>>.
+    Found 15-bit register for signal <y_rshift19_r<17:3>>.
+    Found 1-bit register for signal <rotnvec_out_mod1>.
+    Found 18-bit subtractor for signal <x_rshift17_c[17]_x_rshift15_c[17]_sub_32_OUT> created at line 547.
+    Found 18-bit subtractor for signal <sum1_3_pipe1[17]_sum6_9_pipe1[17]_sub_34_OUT> created at line 549.
+    Found 18-bit subtractor for signal <sum1_3_n6_n9_pipe2[17]_sum1_3_n6_n9_r12_c[17]_sub_44_OUT> created at line 668.
+    Found 18-bit subtractor for signal <y_rshift17_c[17]_y_rshift15_c[17]_sub_71_OUT> created at line 888.
+    Found 18-bit subtractor for signal <ysum1_3_pipe1[17]_ysum6_9_pipe1[17]_sub_73_OUT> created at line 890.
+    Found 18-bit subtractor for signal <ysum1_3_n6_n9_pipe2[17]_ysum1_3_n6_n9_r12_c[17]_sub_83_OUT> created at line 1014.
+    Found 18-bit adder for signal <x_rshift1_c[17]_x_rshift3_c[17]_add_22_OUT> created at line 447.
+    Found 18-bit adder for signal <x_rshift6_c[17]_x_rshift9_c[17]_add_23_OUT> created at line 448.
+    Found 18-bit adder for signal <x_rshift19_c[17]_sum1_3_rshift24_c[17]_add_32_OUT> created at line 548.
+    Found 18-bit adder for signal <sum17_n15_pipe2[17]_sum19_m1_3_pipe2[17]_add_44_OUT> created at line 669.
+    Found 18-bit adder for signal <x_rshift22_c[17]_x_rshift24_c[17]_add_45_OUT> created at line 670.
+    Found 18-bit adder for signal <x_rshift30_c[17]_x_rshift32_c[17]_add_46_OUT> created at line 671.
+    Found 18-bit adder for signal <sum_int1_pipe3[17]_sum17_n15_19_m_pipe3[17]_add_51_OUT> created at line 686.
+    Found 18-bit adder for signal <sum22_24_pipe3[17]_sum30_32_pipe3[17]_add_52_OUT> created at line 687.
+    Found 18-bit adder for signal <sum_final> created at line 692.
+    Found 18-bit adder for signal <y_rshift1_c[17]_y_rshift3_c[17]_add_61_OUT> created at line 786.
+    Found 18-bit adder for signal <y_rshift6_c[17]_y_rshift9_c[17]_add_62_OUT> created at line 787.
+    Found 18-bit adder for signal <y_rshift19_c[17]_ysum1_3_rshift24_c[17]_add_71_OUT> created at line 889.
+    Found 18-bit adder for signal <ysum17_n15_pipe2[17]_ysum19_m1_3_pipe2[17]_add_83_OUT> created at line 1015.
+    Found 18-bit adder for signal <y_rshift22_c[17]_y_rshift24_c[17]_add_84_OUT> created at line 1016.
+    Found 18-bit adder for signal <y_rshift30_c[17]_y_rshift32_c[17]_add_85_OUT> created at line 1017.
+    Found 18-bit adder for signal <ysum_int1_pipe3[17]_ysum17_n15_19_m_pipe3[17]_add_90_OUT> created at line 1032.
+    Found 18-bit adder for signal <ysum22_24_pipe3[17]_ysum30_32_pipe3[17]_add_91_OUT> created at line 1033.
+    Found 18-bit adder for signal <ysum_final> created at line 1038.
+    Found 1-bit comparator equal for signal <rotnvec_in_shift[4]_comp_mode_shift[4]_equal_7_o> created at line 313
+    Summary:
+	inferred  24 Adder/Subtractor(s).
+	inferred 785 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <cordic_gain_corr> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 77
+ 18-bit adder                                          : 22
+ 18-bit addsub                                         : 48
+ 18-bit subtractor                                     : 7
+# Registers                                            : 48
+ 1-bit register                                        : 2
+ 12-bit register                                       : 2
+ 15-bit register                                       : 2
+ 17-bit register                                       : 1
+ 18-bit register                                       : 31
+ 19-bit register                                       : 1
+ 306-bit register                                      : 3
+ 34-bit register                                       : 1
+ 5-bit register                                        : 2
+ 90-bit register                                       : 3
+# Comparators                                          : 4
+ 1-bit comparator equal                                : 1
+ 18-bit comparator greater                             : 2
+ 18-bit comparator lessequal                           : 1
+# Multiplexers                                         : 12
+ 18-bit 2-to-1 multiplexer                             : 8
+ 2-bit 2-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <x_rshift19_r_7> in Unit <u_cordic_gain_corr1> is equivalent to the following 10 FFs/Latches, which will be removed : <x_rshift19_r_8> <x_rshift19_r_9> <x_rshift19_r_10> <x_rshift19_r_11> <x_rshift19_r_12> <x_rshift19_r_13> <x_rshift19_r_14> <x_rshift19_r_15> <x_rshift19_r_16> <x_rshift19_r_17> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_69> in Unit <u_cordic_gain_corr1> is equivalent to the following FF/Latch, which will be removed : <x_rshift9_r_6> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_70> in Unit <u_cordic_gain_corr1> is equivalent to the following FF/Latch, which will be removed : <x_rshift9_r_7> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_71> in Unit <u_cordic_gain_corr1> is equivalent to the following 10 FFs/Latches, which will be removed : <x_rshift9_r_8> <x_rshift9_r_9> <x_rshift9_r_10> <x_rshift9_r_11> <x_rshift9_r_12> <x_rshift9_r_13> <x_rshift9_r_14> <x_rshift9_r_15> <x_rshift9_r_16> <x_rshift9_r_17> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_69> in Unit <u_cordic_gain_corr1> is equivalent to the following FF/Latch, which will be removed : <y_rshift9_r_6> 
+INFO:Xst:2261 - The FF/Latch <y_rshift19_r_7> in Unit <u_cordic_gain_corr1> is equivalent to the following 10 FFs/Latches, which will be removed : <y_rshift19_r_8> <y_rshift19_r_9> <y_rshift19_r_10> <y_rshift19_r_11> <y_rshift19_r_12> <y_rshift19_r_13> <y_rshift19_r_14> <y_rshift19_r_15> <y_rshift19_r_16> <y_rshift19_r_17> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_70> in Unit <u_cordic_gain_corr1> is equivalent to the following FF/Latch, which will be removed : <y_rshift9_r_7> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_71> in Unit <u_cordic_gain_corr1> is equivalent to the following 10 FFs/Latches, which will be removed : <y_rshift9_r_8> <y_rshift9_r_9> <y_rshift9_r_10> <y_rshift9_r_11> <y_rshift9_r_12> <y_rshift9_r_13> <y_rshift9_r_14> <y_rshift9_r_15> <y_rshift9_r_16> <y_rshift9_r_17> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_53> in Unit <u_cordic_gain_corr1> is equivalent to the following 5 FFs/Latches, which will be removed : <y_rshift19_r_3> <y_rshift19_r_4> <y_rshift19_r_5> <y_rshift19_r_6> <y_rshift19_r_7> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_53> in Unit <u_cordic_gain_corr1> is equivalent to the following 5 FFs/Latches, which will be removed : <x_rshift19_r_3> <x_rshift19_r_4> <x_rshift19_r_5> <x_rshift19_r_6> <x_rshift19_r_7> 
+WARNING:Xst:2677 - Node <z_in_pipe_16_0> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_1> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_2> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_3> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_4> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_5> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_6> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_7> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_8> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_9> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_10> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_11> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_12> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_13> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_14> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_15> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_16> of sequential type is unconnected in block <u_cordic_core>.
+WARNING:Xst:2677 - Node <z_in_pipe_16_17> of sequential type is unconnected in block <u_cordic_core>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 77
+ 18-bit adder                                          : 22
+ 18-bit addsub                                         : 48
+ 18-bit subtractor                                     : 7
+# Registers                                            : 1882
+ Flip-Flops                                            : 1882
+# Comparators                                          : 4
+ 1-bit comparator equal                                : 1
+ 18-bit comparator greater                             : 2
+ 18-bit comparator lessequal                           : 1
+# Multiplexers                                         : 46
+ 1-bit 2-to-1 multiplexer                              : 36
+ 18-bit 2-to-1 multiplexer                             : 6
+ 2-bit 2-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <x_rshift19_r_7> in Unit <cordic_gain_corr> is equivalent to the following 10 FFs/Latches, which will be removed : <x_rshift19_r_8> <x_rshift19_r_9> <x_rshift19_r_10> <x_rshift19_r_11> <x_rshift19_r_12> <x_rshift19_r_13> <x_rshift19_r_14> <x_rshift19_r_15> <x_rshift19_r_16> <x_rshift19_r_17> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_69> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <x_rshift9_r_6> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_70> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <x_rshift9_r_7> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_71> in Unit <cordic_gain_corr> is equivalent to the following 10 FFs/Latches, which will be removed : <x_rshift9_r_8> <x_rshift9_r_9> <x_rshift9_r_10> <x_rshift9_r_11> <x_rshift9_r_12> <x_rshift9_r_13> <x_rshift9_r_14> <x_rshift9_r_15> <x_rshift9_r_16> <x_rshift9_r_17> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_69> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <y_rshift9_r_6> 
+INFO:Xst:2261 - The FF/Latch <y_rshift19_r_7> in Unit <cordic_gain_corr> is equivalent to the following 10 FFs/Latches, which will be removed : <y_rshift19_r_8> <y_rshift19_r_9> <y_rshift19_r_10> <y_rshift19_r_11> <y_rshift19_r_12> <y_rshift19_r_13> <y_rshift19_r_14> <y_rshift19_r_15> <y_rshift19_r_16> <y_rshift19_r_17> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_70> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <y_rshift9_r_7> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_71> in Unit <cordic_gain_corr> is equivalent to the following 10 FFs/Latches, which will be removed : <y_rshift9_r_8> <y_rshift9_r_9> <y_rshift9_r_10> <y_rshift9_r_11> <y_rshift9_r_12> <y_rshift9_r_13> <y_rshift9_r_14> <y_rshift9_r_15> <y_rshift9_r_16> <y_rshift9_r_17> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_53> in Unit <cordic_gain_corr> is equivalent to the following 5 FFs/Latches, which will be removed : <y_rshift19_r_3> <y_rshift19_r_4> <y_rshift19_r_5> <y_rshift19_r_6> <y_rshift19_r_7> 
+INFO:Xst:2261 - The FF/Latch <x_in_shift_4_53> in Unit <cordic_gain_corr> is equivalent to the following 5 FFs/Latches, which will be removed : <x_rshift19_r_3> <x_rshift19_r_4> <x_rshift19_r_5> <x_rshift19_r_6> <x_rshift19_r_7> 
+INFO:Xst:2261 - The FF/Latch <rotnvec_in_shift_0> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <comp_mode_shift_0> 
+INFO:Xst:2261 - The FF/Latch <rotnvec_in_shift_1> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <comp_mode_shift_1> 
+INFO:Xst:2261 - The FF/Latch <rotnvec_in_shift_2> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <comp_mode_shift_2> 
+INFO:Xst:2261 - The FF/Latch <rotnvec_in_shift_3> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <comp_mode_shift_3> 
+INFO:Xst:2261 - The FF/Latch <rotnvec_in_shift_4> in Unit <cordic_gain_corr> is equivalent to the following FF/Latch, which will be removed : <comp_mode_shift_4> 
+WARNING:Xst:1710 - FF/Latch <sum22_24_pipe3_0> (without init value) has a constant value of 0 in block <cordic_gain_corr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum30_32_pipe3_0> (without init value) has a constant value of 0 in block <cordic_gain_corr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ysum22_24_pipe3_0> (without init value) has a constant value of 0 in block <cordic_gain_corr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ysum30_32_pipe3_0> (without init value) has a constant value of 0 in block <cordic_gain_corr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <sum_int2_pipe4_0> (without init value) has a constant value of 0 in block <cordic_gain_corr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ysum_int2_pipe4_0> (without init value) has a constant value of 0 in block <cordic_gain_corr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <x_in_shift_4_0> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_1> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_2> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_3> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_4> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_5> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_6> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_7> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_8> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_9> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_10> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_11> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_12> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_13> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_14> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_15> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_16> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_17> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_18> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_19> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_20> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_21> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_22> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_23> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_24> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_25> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_26> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_27> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_28> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_29> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_30> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_31> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_32> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_33> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_34> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_35> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_36> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_37> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_38> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_39> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_40> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_41> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_42> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_43> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_44> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_45> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_46> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_47> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_48> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_49> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_50> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_51> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_52> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_54> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_55> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_56> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_57> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_58> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_59> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_60> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_61> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_62> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_63> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_64> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_65> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_66> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_67> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_68> of sequential type is unconnected in block <cordic_gain_corr>.
+WARNING:Xst:2677 - Node <x_in_shift_4_72> of sequential type is unconnected in block <cordic_gain_corr>.
+INFO:Xst:2261 - The FF/Latch <ysum6_9_pipe1_12> in Unit <cordic_gain_corr> is equivalent to the following 5 FFs/Latches, which will be removed : <ysum6_9_pipe1_13> <ysum6_9_pipe1_14> <ysum6_9_pipe1_15> <ysum6_9_pipe1_16> <ysum6_9_pipe1_17> 
+INFO:Xst:2261 - The FF/Latch <sum6_9_pipe1_12> in Unit <cordic_gain_corr> is equivalent to the following 5 FFs/Latches, which will be removed : <sum6_9_pipe1_13> <sum6_9_pipe1_14> <sum6_9_pipe1_15> <sum6_9_pipe1_16> <sum6_9_pipe1_17> 
+INFO:Xst:2261 - The FF/Latch <ysum17_n15_pipe2_2> in Unit <cordic_gain_corr> is equivalent to the following 15 FFs/Latches, which will be removed : <ysum17_n15_pipe2_3> <ysum17_n15_pipe2_4> <ysum17_n15_pipe2_5> <ysum17_n15_pipe2_6> <ysum17_n15_pipe2_7> <ysum17_n15_pipe2_8> <ysum17_n15_pipe2_9> <ysum17_n15_pipe2_10> <ysum17_n15_pipe2_11> <ysum17_n15_pipe2_12> <ysum17_n15_pipe2_13> <ysum17_n15_pipe2_14> <ysum17_n15_pipe2_15> <ysum17_n15_pipe2_16> <ysum17_n15_pipe2_17> 
+INFO:Xst:2261 - The FF/Latch <sum22_24_pipe3_1> in Unit <cordic_gain_corr> is equivalent to the following 33 FFs/Latches, which will be removed : <sum22_24_pipe3_2> <sum22_24_pipe3_3> <sum22_24_pipe3_4> <sum22_24_pipe3_5> <sum22_24_pipe3_6> <sum22_24_pipe3_7> <sum22_24_pipe3_8> <sum22_24_pipe3_9> <sum22_24_pipe3_10> <sum22_24_pipe3_11> <sum22_24_pipe3_12> <sum22_24_pipe3_13> <sum22_24_pipe3_14> <sum22_24_pipe3_15> <sum22_24_pipe3_16> <sum22_24_pipe3_17> <sum30_32_pipe3_1> <sum30_32_pipe3_2> <sum30_32_pipe3_3> <sum30_32_pipe3_4> <sum30_32_pipe3_5> <sum30_32_pipe3_6> <sum30_32_pipe3_7> <sum30_32_pipe3_8> <sum30_32_pipe3_9> <sum30_32_pipe3_10> <sum30_32_pipe3_11> <sum30_32_pipe3_12> <sum30_32_pipe3_13> <sum30_32_pipe3_14> <sum30_32_pipe3_15> <sum30_32_pipe3_16> <sum30_32_pipe3_17> 
+INFO:Xst:2261 - The FF/Latch <sum17_n15_pipe2_2> in Unit <cordic_gain_corr> is equivalent to the following 15 FFs/Latches, which will be removed : <sum17_n15_pipe2_3> <sum17_n15_pipe2_4> <sum17_n15_pipe2_5> <sum17_n15_pipe2_6> <sum17_n15_pipe2_7> <sum17_n15_pipe2_8> <sum17_n15_pipe2_9> <sum17_n15_pipe2_10> <sum17_n15_pipe2_11> <sum17_n15_pipe2_12> <sum17_n15_pipe2_13> <sum17_n15_pipe2_14> <sum17_n15_pipe2_15> <sum17_n15_pipe2_16> <sum17_n15_pipe2_17> 
+INFO:Xst:2261 - The FF/Latch <ysum19_m1_3_pipe2_1> in Unit <cordic_gain_corr> is equivalent to the following 16 FFs/Latches, which will be removed : <ysum19_m1_3_pipe2_2> <ysum19_m1_3_pipe2_3> <ysum19_m1_3_pipe2_4> <ysum19_m1_3_pipe2_5> <ysum19_m1_3_pipe2_6> <ysum19_m1_3_pipe2_7> <ysum19_m1_3_pipe2_8> <ysum19_m1_3_pipe2_9> <ysum19_m1_3_pipe2_10> <ysum19_m1_3_pipe2_11> <ysum19_m1_3_pipe2_12> <ysum19_m1_3_pipe2_13> <ysum19_m1_3_pipe2_14> <ysum19_m1_3_pipe2_15> <ysum19_m1_3_pipe2_16> <ysum19_m1_3_pipe2_17> 
+INFO:Xst:2261 - The FF/Latch <sum19_m1_3_pipe2_1> in Unit <cordic_gain_corr> is equivalent to the following 16 FFs/Latches, which will be removed : <sum19_m1_3_pipe2_2> <sum19_m1_3_pipe2_3> <sum19_m1_3_pipe2_4> <sum19_m1_3_pipe2_5> <sum19_m1_3_pipe2_6> <sum19_m1_3_pipe2_7> <sum19_m1_3_pipe2_8> <sum19_m1_3_pipe2_9> <sum19_m1_3_pipe2_10> <sum19_m1_3_pipe2_11> <sum19_m1_3_pipe2_12> <sum19_m1_3_pipe2_13> <sum19_m1_3_pipe2_14> <sum19_m1_3_pipe2_15> <sum19_m1_3_pipe2_16> <sum19_m1_3_pipe2_17> 
+INFO:Xst:2261 - The FF/Latch <y_in_shift_4_35> in Unit <cordic_gain_corr> is equivalent to the following 34 FFs/Latches, which will be removed : <ysum22_24_pipe3_1> <ysum22_24_pipe3_2> <ysum22_24_pipe3_3> <ysum22_24_pipe3_4> <ysum22_24_pipe3_5> <ysum22_24_pipe3_6> <ysum22_24_pipe3_7> <ysum22_24_pipe3_8> <ysum22_24_pipe3_9> <ysum22_24_pipe3_10> <ysum22_24_pipe3_11> <ysum22_24_pipe3_12> <ysum22_24_pipe3_13> <ysum22_24_pipe3_14> <ysum22_24_pipe3_15> <ysum22_24_pipe3_16> <ysum22_24_pipe3_17> <ysum30_32_pipe3_1> <ysum30_32_pipe3_2> <ysum30_32_pipe3_3> <ysum30_32_pipe3_4> <ysum30_32_pipe3_5> <ysum30_32_pipe3_6> <ysum30_32_pipe3_7> <ysum30_32_pipe3_8> <ysum30_32_pipe3_9> <ysum30_32_pipe3_10> <ysum30_32_pipe3_11> <ysum30_32_pipe3_12> <ysum30_32_pipe3_13> <ysum30_32_pipe3_14> <ysum30_32_pipe3_15> <ysum30_32_pipe3_16> <ysum30_32_pipe3_17> 
+
+Optimizing unit <cordic_top> ...
+
+Optimizing unit <cordic> ...
+
+Optimizing unit <cordic_core> ...
+
+Optimizing unit <ip_quad_adj> ...
+
+Optimizing unit <op_quad_adj> ...
+
+Optimizing unit <cordic_gain_corr> ...
+WARNING:Xst:2677 - Node <u_cordic/z_out_17> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_16> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_15> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_14> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_13> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_12> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_11> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_10> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_9> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_8> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_7> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_6> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_5> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_4> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_3> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_2> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_1> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/z_out_0> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/x_out_0> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_34> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_33> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_32> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_31> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_30> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_29> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_28> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_27> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_26> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_25> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_24> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_23> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_22> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_21> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_20> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_19> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_18> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_17> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_16> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_15> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_14> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_13> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_12> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_11> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_10> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_9> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_8> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_7> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_6> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_5> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_4> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_3> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_2> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_1> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic/u_cordic_core/z_in_pipe_16_0> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/rotnvec_out_mod1> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_17> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_16> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_15> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_14> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_13> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_12> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_11> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_10> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_9> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_8> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_7> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_6> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_5> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_4> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_3> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_2> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_1> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_out_mod1_0> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_89> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_88> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_87> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_86> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_85> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_84> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_83> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_82> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_81> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_80> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_79> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_78> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_77> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_76> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_75> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_74> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_73> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_72> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_71> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_70> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_69> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_68> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_67> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_66> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_65> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_64> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_63> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_62> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_61> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_60> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_59> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_58> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_57> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_56> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_55> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_54> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_53> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_52> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_51> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_50> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_49> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_48> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_47> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_46> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_45> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_44> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_43> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_42> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_41> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_40> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_39> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_38> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_37> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_36> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_35> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_34> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_33> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_32> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_31> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_30> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_29> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_28> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_27> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_26> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_25> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_24> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_23> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_22> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_21> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_20> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_19> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_18> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_17> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_16> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_15> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_14> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_13> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_12> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_11> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_10> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_9> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_8> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_7> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_6> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_5> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_4> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_3> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_2> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_1> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:2677 - Node <u_cordic_gain_corr1/z_in_shift_4_0> of sequential type is unconnected in block <cordic_top>.
+WARNING:Xst:1710 - FF/Latch <u_cordic_gain_corr1/ysum_int2_pipe4_1> (without init value) has a constant value of 0 in block <cordic_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_cordic_gain_corr1/sum_int2_pipe4_1> (without init value) has a constant value of 0 in block <cordic_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_cordic_gain_corr1/ysum19_m1_3_pipe2_0> (without init value) has a constant value of 0 in block <cordic_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_cordic_gain_corr1/sum19_m1_3_pipe2_0> (without init value) has a constant value of 0 in block <cordic_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/y_in_shift_4_17> in Unit <cordic_top> is equivalent to the following 16 FFs/Latches, which will be removed : <u_cordic_gain_corr1/ysum_int2_pipe4_17> <u_cordic_gain_corr1/ysum_int2_pipe4_16> <u_cordic_gain_corr1/ysum_int2_pipe4_15> <u_cordic_gain_corr1/ysum_int2_pipe4_14> <u_cordic_gain_corr1/ysum_int2_pipe4_13> <u_cordic_gain_corr1/ysum_int2_pipe4_12> <u_cordic_gain_corr1/ysum_int2_pipe4_11> <u_cordic_gain_corr1/ysum_int2_pipe4_10> <u_cordic_gain_corr1/ysum_int2_pipe4_9> <u_cordic_gain_corr1/ysum_int2_pipe4_8> <u_cordic_gain_corr1/ysum_int2_pipe4_7> <u_cordic_gain_corr1/ysum_int2_pipe4_6> <u_cordic_gain_corr1/ysum_int2_pipe4_5> <u_cordic_gain_corr1/ysum_int2_pipe4_4> <u_cordic_gain_corr1/ysum_int2_pipe4_3> <u_cordic_gain_corr1/ysum_int2_pipe4_2> 
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/sum17_n15_19_m_pipe3_2> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic_gain_corr1/sum17_n15_19_m_pipe3_16> 
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/sum6_9_pipe1_12> in Unit <cordic_top> is equivalent to the following 2 FFs/Latches, which will be removed : <u_cordic_gain_corr1/sum1_3_pipe1_17> <u_cordic_gain_corr1/x_in_shift_4_71> 
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/ysum19_m1_3_pipe2_1> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic_gain_corr1/y_in_shift_4_53> 
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/sum_int2_pipe4_2> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic_gain_corr1/sum_int2_pipe4_16> 
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/ysum6_9_pipe1_12> in Unit <cordic_top> is equivalent to the following 2 FFs/Latches, which will be removed : <u_cordic_gain_corr1/ysum1_3_pipe1_17> <u_cordic_gain_corr1/y_in_shift_4_71> 
+INFO:Xst:2261 - The FF/Latch <u_cordic/u_cordic_core/x_in_pipe_16_270> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/y_in_pipe_16_270> 
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/ysum17_n15_19_m_pipe3_2> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic_gain_corr1/ysum17_n15_19_m_pipe3_16> 
+INFO:Xst:2261 - The FF/Latch <u_cordic_gain_corr1/sum19_m1_3_pipe2_1> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic_gain_corr1/x_in_shift_4_53> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_0> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/rotnvec_mode_r> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_1> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_0> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_2> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_1> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_3> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_2> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_4> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_3> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_5> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_4> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_6> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_5> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_7> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_6> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_8> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_7> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_9> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_8> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_10> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_9> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_11> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_10> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_12> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_11> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_13> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_12> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_14> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_13> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_15> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_14> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_16> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_15> 
+INFO:Xst:2261 - The FF/Latch <gain_mode_delay_17> in Unit <cordic_top> is equivalent to the following FF/Latch, which will be removed : <u_cordic/u_cordic_core/rotnvec_mode_pipe_16> 
+Found area constraint ratio of 100 (+ 5) on block cordic_top, actual ratio is 18.
+
+Final Macro Processing ...
+
+Processing Unit <cordic_top> :
+	Found 16-bit shift register for signal <u_cordic/u_cordic_core/quadrant_pipe_16_1>.
+	Found 16-bit shift register for signal <u_cordic/u_cordic_core/quadrant_pipe_16_0>.
+	Found 6-bit shift register for signal <u_cordic_gain_corr1/rotnvec_in_shift_4>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_14>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_13>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_12>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_11>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_10>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_9>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_8>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_7>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_6>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_5>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_4>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_3>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_2>.
+	Found 4-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_1>.
+	Found 5-bit shift register for signal <u_cordic_gain_corr1/y_in_shift_4_0>.
+Unit <cordic_top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1299
+ Flip-Flops                                            : 1299
+# Shift Registers                                      : 18
+ 16-bit shift register                                 : 2
+ 4-bit shift register                                  : 14
+ 5-bit shift register                                  : 1
+ 6-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : cordic_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3494
+#      GND                         : 1
+#      INV                         : 52
+#      LUT1                        : 9
+#      LUT2                        : 245
+#      LUT3                        : 72
+#      LUT4                        : 425
+#      LUT5                        : 460
+#      LUT6                        : 2
+#      MUXCY                       : 1092
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 1134
+# FlipFlops/Latches                : 1350
+#      FDC                         : 1299
+#      FDCE                        : 33
+#      FDE                         : 18
+# Shift Registers                  : 18
+#      SRLC16E                     : 18
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 110
+#      IBUF                        : 56
+#      OBUF                        : 54
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1350  out of  18224     7%  
+ Number of Slice LUTs:                 1283  out of   9112    14%  
+    Number used as Logic:              1265  out of   9112    13%  
+    Number used as Memory:               18  out of   2176     0%  
+       Number used as SRL:               18
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1463
+   Number with an unused Flip Flop:     113  out of   1463     7%  
+   Number with an unused LUT:           180  out of   1463    12%  
+   Number of fully used LUT-FF pairs:  1170  out of   1463    79%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                         111
+ Number of bonded IOBs:                 111  out of    232    47%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1368  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.555ns (Maximum Frequency: 219.539MHz)
+   Minimum input arrival time before clock: 5.413ns
+   Maximum output required time after clock: 4.118ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.555ns (frequency: 219.539MHz)
+  Total number of paths / destination ports: 52933 / 1312
+-------------------------------------------------------------------------
+Delay:               4.555ns (Levels of Logic = 4)
+  Source:            u_cordic/z_in_r_4 (FF)
+  Destination:       u_cordic/u_cordic_core/z_in_pipe_16_305 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: u_cordic/z_in_r_4 to u_cordic/u_cordic_core/z_in_pipe_16_305
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.525   1.181  u_cordic/z_in_r_4 (u_cordic/z_in_r_4)
+     LUT6:I0->O            1   0.254   1.112  u_cordic/u_ip_quad_info/Mmux_quadrant_c16 (u_cordic/u_ip_quad_info/Mmux_quadrant_c15)
+     LUT6:I1->O            1   0.254   0.000  u_cordic/u_ip_quad_info/Mmux_quadrant_c17_G (N6)
+     MUXF7:I1->O           2   0.175   0.726  u_cordic/u_ip_quad_info/Mmux_quadrant_c17 (u_cordic/quadrant_c<0>)
+     LUT3:I2->O            1   0.254   0.000  u_cordic/u_ip_quad_adj/z_qadj_c<17>1 (u_cordic/z_in_cd_c<17>)
+     FDC:D                     0.074          u_cordic/u_cordic_core/z_in_pipe_16_305
+    ----------------------------------------
+    Total                      4.555ns (1.536ns logic, 3.019ns route)
+                                       (33.7% logic, 66.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1387 / 1387
+-------------------------------------------------------------------------
+Offset:              5.413ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       gain_mode_delay_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to gain_mode_delay_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O           1332   0.255   2.690  rst_n_inv1_INV_0 (rst_n_inv)
+     FDC:CLR                   0.459          gain_mode_delay_0
+    ----------------------------------------
+    Total                      5.413ns (2.042ns logic, 3.371ns route)
+                                       (37.7% logic, 62.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 36 / 36
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            u_cordic_gain_corr1/x_out_mod1_17 (FF)
+  Destination:       x_out<17> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: u_cordic_gain_corr1/x_out_mod1_17 to x_out<17>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.525   0.681  u_cordic_gain_corr1/x_out_mod1_17 (u_cordic_gain_corr1/x_out_mod1_17)
+     OBUF:I->O                 2.912          x_out_17_OBUF (x_out<17>)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.555|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 53.00 secs
+Total CPU time to Xst completion: 52.50 secs
+ 
+--> 
+
+Total memory usage is 423120 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  264 (   0 filtered)
+Number of infos    :   62 (   0 filtered)
+
