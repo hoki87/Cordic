@@ -52,41 +52,85 @@ module cordic_tb();
 
    ////////////////// Cordic
    reg     [1:0]             mode;
-   reg     [(D_WIDTH-1):0]   x_in;
-   reg     [(D_WIDTH-1):0]   y_in;
-   wire    [(D_WIDTH-1):0]   r_out;
+   reg                       en;
+   reg     [IN_WIDTH-1:0]    x_in;
+   reg     [IN_WIDTH-1:0]    y_in;
+   reg     [IN_WIDTH-1:0]    z_in;
+   wire    [OUT_WIDTH-1:0]   r_out;
+   wire    [OUT_WIDTH-1:0]   a_out;
    
-   assign z_in = 0;
-
    initial begin
-      mode = 1;
-      @(posedge rst_n);
+      en=1'b0;
       mode = 0;
+      x_in = 0;
+      y_in = 0;
+      z_in = 0;
+      @(posedge rst_n);
+      @(posedge clk);
+      // Mode 1
+      mode = 1;
+      en=1'b1;
       x_in = 30000;
       y_in = 40000;
-      @(negedge clk);
-      mode = 0;
+      @(posedge clk);
       x_in = 40000;
       y_in = 30000;
-      @(negedge clk);
-      mode = 0;
+      @(posedge clk);
       x_in =-30000;
       y_in = 40000;
-      @(negedge clk);
-      mode = 0;
+      @(posedge clk);
       x_in =-40000;
       y_in = 30000;
-      @(negedge clk);
-      mode = 1;
+      @(posedge clk);
+      x_in = 65535;
+      y_in =-65536;
+      @(posedge clk);
+      x_in = 65535;
+      y_in = 65535;
+      @(posedge clk);
+      x_in =-65536;
+      y_in =-65536;
+      @(posedge clk);
+      en=1'b0;
+      mode = 0;
+      @(posedge clk);
+      // Mode 2
+      mode = 2;
+      en=1'b1;
+      x_in = 0;
+      y_in =-50000;
+      z_in = 65535; // 90 degree
+      @(posedge clk);
+      x_in = 35355;
+      y_in =-35355;
+      z_in = 32767; // 45 degree
+      @(posedge clk);
+      x_in = 50000;
+      y_in = 0;
+      z_in = 0;     // 0 degree
+      @(posedge clk);
+      x_in = 35355;
+      y_in = 35355;
+      z_in =-32768; //-45 degree
+      @(posedge clk);
+      x_in = 0;
+      y_in = 50000;
+      z_in =-65536; //-90 degree
+      @(posedge clk);
+      en=1'b0;
+      mode = 0;
    end
       
    cordic_top cordic_top_u(
-       .clk         (clk),
+       .clk         (clk  ),
        .rst_n       (rst_n),
-       .mode        (mode ),
-       .x_in        (x_in),
-       .y_in        (y_in),
-       .r_out       (r_out)
+       .en_in       (en   ),
+       .mode_in     (mode ),
+       .x_in        (x_in ),
+       .y_in        (y_in ),
+       .z_in        (z_in ),
+       .r_out       (r_out),
+       .a_out       (a_out)
      );
   
 endmodule

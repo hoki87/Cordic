@@ -2,21 +2,21 @@
 Active File Display Mode=1
 Active File Index=5
 Open File Line0=2383
-Open File Line1=4107
-Open File Line2=7543
+Open File Line1=1249
+Open File Line2=4167
 Open File Line3=8562
-Open File Line4=14611
-Open File Line5=0
+Open File Line4=51505
+Open File Line5=543
 Open File Line6=0
-Open File Line7=2161
+Open File Line7=1856
 Open File Pos0=2841
-Open File Pos1=6225
-Open File Pos2=8784
+Open File Pos1=2245
+Open File Pos2=7148
 Open File Pos3=8919
-Open File Pos4=16376
-Open File Pos5=2956
-Open File Pos6=475
-Open File Pos7=2803
+Open File Pos4=52910
+Open File Pos5=2335
+Open File Pos6=553
+Open File Pos7=2397
 Open File Tab Pos0=0
 Open File Tab Pos1=0
 Open File Tab Pos2=0
@@ -25,14 +25,14 @@ Open File Tab Pos4=0
 Open File Tab Pos5=1
 Open File Tab Pos6=1
 Open File Tab Pos7=1
-Open File Window Pos0=0,1,-1,-1,-1,-1,5,27,772,871
-Open File Window Pos1=0,1,-1,-1,-1,-1,5,27,772,871
-Open File Window Pos2=0,1,-1,-1,-1,-1,5,27,772,871
-Open File Window Pos3=0,1,-1,-1,-1,-1,5,27,772,871
-Open File Window Pos4=0,1,-1,-1,-1,-1,5,27,772,871
-Open File Window Pos5=0,1,-1,-1,-1,-1,782,27,1595,871
-Open File Window Pos6=0,1,-1,-1,-1,-1,782,27,1595,871
-Open File Window Pos7=0,1,-1,-1,-1,-1,782,27,1595,871
+Open File Window Pos0=0,1,-1,-1,-1,-1,5,27,795,871
+Open File Window Pos1=0,1,-1,-1,-1,-1,5,27,795,871
+Open File Window Pos2=0,1,-1,-1,-1,-1,5,27,795,871
+Open File Window Pos3=0,1,-1,-1,-1,-1,5,27,795,871
+Open File Window Pos4=0,1,-1,-1,-1,-1,5,27,795,871
+Open File Window Pos5=0,1,-1,-1,-1,-1,805,27,1595,871
+Open File Window Pos6=0,1,-1,-1,-1,-1,805,27,1595,871
+Open File Window Pos7=0,1,-1,-1,-1,-1,805,27,1595,871
 Open File0=X:\Cordic\FPGA\src\ip_quad_info.v
 Open File1=X:\Cordic\FPGA\src\cordic_inc.v
 Open File2=X:\Cordic\FPGA\src\cordic.v
@@ -40,17 +40,16 @@ Open File3=X:\Cordic\FPGA\src\cordic_core.v
 Open File4=X:\Cordic\FPGA\src\cordic_gain_corr.v
 Open File5=X:\Cordic\FPGA\src\cordic_top.v
 Open File6=X:\Cordic\FPGA\src\cordic_inc_p2.v
-Open File7=X:\Cordic\FPGA\src\cordic_tb.v
+Open File7=X:\Cordic\FPGA\script\cordic_tb.v
 Open File8=
 Remember Files=1
 
 [Project Information]
-	Project Start=E0070B0005000B000D001500180000003C
+Project Start=E0070B0005000B000D001500180000003C
 
 [Open File Tabs]
-Tab0=0,485625,0,1000000
-Tab1=485625,514375,0,1000000
+Tab0=0,500000,0,1000000
+Tab1=500000,500000,0,1000000
 
 [Folders]
-	.\src\=1
-
+.\src\=1

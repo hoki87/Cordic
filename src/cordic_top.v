@@ -10,19 +10,27 @@
 ////////////////////////////////////////////////////////////////
 // 
 //  Description: Top module of cordic
+//  Mode  | IN:   X     Y     Z    | OUT:         R             A          |   Remarks:
+//   1            x     y     -            (x^2+y^2)^(1/2)  arctan(x/y)        angle(A) -  data:-2^(D-1) ~ 2^(D-1)-1, degree: -90 ~ 90
+//   2            x     y     z              xcosz-ysinz    ycosz+xsinz        angle(Z) -  data:-2^(D-1) ~ 2^(D-1)-1, degree: -90 ~ 90
 //
 ////////////////////////////////////////////////////////////////
-// 
-//  Revision: 1.0
+//
+//  Revision: 1.0 2016/11/12
+//            1.1 2016/12/3
 
 /////////////////////////// MODULE //////////////////////////////
 module cordic_top(
     clk,
     rst_n,
-    mode,
+    en_in,
+    mode_in,
     x_in,
     y_in,
-    r_out
+    z_in,
+    ready_out,
+    r_out,
+    a_out
   );
   
 /////////////////////////// INCLUDE /////////////////////////////
@@ -30,16 +38,20 @@ module cordic_top(
 
    ////////////////// PORT ////////////////////
 
-   input                      clk;
-   input                      rst_n;
+   input                      clk;       // clock
+   input                      rst_n;     // reset, active low
+                                         
+   //Input data                          
+   input                      en_in;     // enable input            
+   input   [1:0]              mode_in;   // mode select
+   input   [IN_WIDTH-1:0]     x_in;      // x input
+   input   [IN_WIDTH-1:0]     y_in;      // y input
+   input   [IN_WIDTH-1:0]     z_in;      // z input 
                               
-   //Input data               
-   input   [1:0]              mode; // 0: mean square root
-   input   [(D_WIDTH-1):0]    x_in;
-   input   [(D_WIDTH-1):0]    y_in;
-                              
-   //Output data              
-   output  [(D_WIDTH-1):0]    r_out;
+   //Output data
+   output  [OUT_WIDTH-1:0]    r_out;     // r output
+   output  [OUT_WIDTH-1:0]    a_out;     // a output
+   output                     ready_out; // process ready output
 
    ////////////////// ARCH ////////////////////
    
@@ -50,17 +62,23 @@ module cordic_top(
    reg                        rotnvec_mode;
 
    always@* begin
-      case(mode)
-         0: begin // z = (x^2+y^2)^(1/2)
-            cordic_x_in <= {{XY_WIDTH-D_WIDTH{x_in[D_WIDTH-1]}},x_in};
-            cordic_y_in <= {{XY_WIDTH-D_WIDTH{y_in[D_WIDTH-1]}},y_in};
-            cordic_z_in <= {Z_WIDTH{1'b0}};
+      case(mode_in)
+         1: begin 
+            cordic_x_in  <= {{XY_WIDTH-IN_WIDTH{x_in[IN_WIDTH-1]}},x_in};
+            cordic_y_in  <= {{XY_WIDTH-IN_WIDTH{y_in[IN_WIDTH-1]}},y_in};
+            cordic_z_in  <= {Z_WIDTH{1'b0}};
             rotnvec_mode <= 1'b0;
          end
+         2: begin
+            cordic_x_in  <= {{XY_WIDTH-IN_WIDTH{x_in[IN_WIDTH-1]}},x_in};
+            cordic_y_in  <= {{XY_WIDTH-IN_WIDTH{y_in[IN_WIDTH-1]}},y_in};
+            cordic_z_in  <= {{Z_WIDTH-IN_WIDTH{z_in[IN_WIDTH-1]}},z_in};
+            rotnvec_mode <= 1'b1;
+         end
          default: begin
-            cordic_x_in <= 0;
-            cordic_y_in <= 0;
-            cordic_z_in <= 0;
+            cordic_x_in  <= 0;
+            cordic_y_in  <= 0;
+            cordic_z_in  <= 0;
             rotnvec_mode <= 1'b1;
          end
       endcase
@@ -99,7 +117,7 @@ module cordic_top(
             end
             else begin
                if(i==0)
-                  mode_delay[i] <= mode;
+                  mode_delay[i] <= mode_in;
                else
                   mode_delay[i] <= mode_delay[i-1];
             end
@@ -140,18 +158,35 @@ module cordic_top(
    );
 
    ////////////////// OUT
-   reg  [(D_WIDTH-1):0]  r_out;
+   reg  [CORDIC_DELAY-1:0] p_en_in;
+   reg                     ready_out;
+   reg  [OUT_WIDTH-1:0]    r_out;
+   reg  [OUT_WIDTH-1:0]    a_out;
    always  @(posedge clk or negedge rst_n) begin
       if (~rst_n) begin
+         p_en_in <= 0;
+         ready_out <= 1'b0;
          r_out <= 0;
+         a_out <= 0;
       end
       else begin
+         // ready of result output
+         p_en_in <= {p_en_in[CORDIC_DELAY-2:0],en_in};
+         ready_out <= p_en_in[CORDIC_DELAY-1];
+         
+         // result output
          case(mode_delay[CORDIC_DELAY-1])
-            0: begin // z = (x^2+y^2)^(1/2)
-               r_out <= gain_corr_x[D_WIDTH-1:0];
+            1: begin // r = (x^2+y^2)^(1/2), a = arctan(y/x)
+               r_out <= gain_corr_x[(OUT_WIDTH>XY_WIDTH ? XY_WIDTH:OUT_WIDTH)-1:0];
+               a_out <= gain_corr_z[(OUT_WIDTH>Z_WIDTH ? Z_WIDTH:OUT_WIDTH)-1:0];
+            end
+            2: begin // r = xcosz-ysinz, a = ycosz+xsinz
+               r_out <= gain_corr_x[(OUT_WIDTH>XY_WIDTH ? XY_WIDTH:OUT_WIDTH)-1:0];
+               a_out <= gain_corr_y[(OUT_WIDTH>XY_WIDTH ? XY_WIDTH:OUT_WIDTH)-1:0];
             end
             default: begin
                r_out <= 0;
+               a_out <= 0;
             end
          endcase
       end

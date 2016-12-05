@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-11-12T18:19:14</DateModified>
+  <DateModified>2016-11-13T13:16:51</DateModified>
   <ModuleName>cordic_top</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2016-11-13T13:15:17</SummaryTimeStamp>
   <SavedFilePath>X:/Cordic/FPGA/xilinx_prj/iseconfig/cordic_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>X:/Cordic/FPGA/xilinx_prj</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>X:/Cordic/FPGA/xilinx_prj\</ImplementationReportsDirectory>
   <DateInitialized>2016-11-12T18:19:14</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
