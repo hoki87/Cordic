@@ -11,8 +11,8 @@
 // 
 //  Description: Top module of cordic
 //  Mode  | IN:   X     Y     Z    | OUT:         R             A          |   Remarks:
-//   1            x     y     -            (x^2+y^2)^(1/2)  arctan(x/y)        angle(A) -  data:-2^(D-1) ~ 2^(D-1)-1, degree: -90 ~ 90
-//   2            x     y     z              xcosz-ysinz    ycosz+xsinz        angle(Z) -  data:-2^(D-1) ~ 2^(D-1)-1, degree: -90 ~ 90
+//   1            x     y     -            (x^2+y^2)^(1/2)  arctan(x/y)        angle(A) -  data:-2^(OUT_WIDTH-1) ~ 2^(OUT_WIDTH-1)-1, degree: -180 ~ 180
+//   2            x     y     z              xcosz-ysinz    ycosz+xsinz        angle(Z) -  data:-2^(IN_WIDTH-1)  ~ 2^(IN_WIDTH-1)-1,  degree: -180 ~ 180
 //
 ////////////////////////////////////////////////////////////////
 //
@@ -46,7 +46,7 @@ module cordic_top(
    input   [1:0]              mode_in;   // mode select
    input   [IN_WIDTH-1:0]     x_in;      // x input
    input   [IN_WIDTH-1:0]     y_in;      // y input
-   input   [IN_WIDTH-1:0]     z_in;      // z input 
+   input   [IN_WIDTH-1:0]     z_in;      // z input
                               
    //Output data
    output  [OUT_WIDTH-1:0]    r_out;     // r output
@@ -64,15 +64,15 @@ module cordic_top(
    always@* begin
       case(mode_in)
          1: begin 
-            cordic_x_in  <= {{XY_WIDTH-IN_WIDTH{x_in[IN_WIDTH-1]}},x_in};
-            cordic_y_in  <= {{XY_WIDTH-IN_WIDTH{y_in[IN_WIDTH-1]}},y_in};
+            cordic_x_in  <= {{GAIN_EXT_BITS{x_in[IN_WIDTH-1]}},x_in};
+            cordic_y_in  <= {{GAIN_EXT_BITS{y_in[IN_WIDTH-1]}},y_in};
             cordic_z_in  <= {Z_WIDTH{1'b0}};
             rotnvec_mode <= 1'b0;
          end
          2: begin
-            cordic_x_in  <= {{XY_WIDTH-IN_WIDTH{x_in[IN_WIDTH-1]}},x_in};
-            cordic_y_in  <= {{XY_WIDTH-IN_WIDTH{y_in[IN_WIDTH-1]}},y_in};
-            cordic_z_in  <= {{Z_WIDTH-IN_WIDTH{z_in[IN_WIDTH-1]}},z_in};
+            cordic_x_in  <= {{GAIN_EXT_BITS{x_in[IN_WIDTH-1]}},x_in};
+            cordic_y_in  <= {{GAIN_EXT_BITS{y_in[IN_WIDTH-1]}},y_in};
+            cordic_z_in  <= {z_in,{GAIN_EXT_BITS{1'b0}}};
             rotnvec_mode <= 1'b1;
          end
          default: begin
@@ -116,10 +116,12 @@ module cordic_top(
                mode_delay[i] <= 0;
             end
             else begin
-               if(i==0)
-                  mode_delay[i] <= mode_in;
-               else
-                  mode_delay[i] <= mode_delay[i-1];
+               if(i==0) begin
+                  mode_delay[i]   <= mode_in;
+               end
+               else begin
+                  mode_delay[i]   <= mode_delay[i-1];
+               end
             end
          end
       end
@@ -176,13 +178,13 @@ module cordic_top(
          
          // result output
          case(mode_delay[CORDIC_DELAY-1])
-            1: begin // r = (x^2+y^2)^(1/2), a = arctan(y/x)
-               r_out <= gain_corr_x[(OUT_WIDTH>XY_WIDTH ? XY_WIDTH:OUT_WIDTH)-1:0];
-               a_out <= gain_corr_z[(OUT_WIDTH>Z_WIDTH ? Z_WIDTH:OUT_WIDTH)-1:0];
+            1: begin // r = (x^2+y^2)^(1/2), a = arctan(x/y)
+               r_out <= gain_corr_x;
+               a_out <= gain_corr_z;
             end
             2: begin // r = xcosz-ysinz, a = ycosz+xsinz
-               r_out <= gain_corr_x[(OUT_WIDTH>XY_WIDTH ? XY_WIDTH:OUT_WIDTH)-1:0];
-               a_out <= gain_corr_y[(OUT_WIDTH>XY_WIDTH ? XY_WIDTH:OUT_WIDTH)-1:0];
+               r_out <= gain_corr_x;
+               a_out <= gain_corr_y;
             end
             default: begin
                r_out <= 0;

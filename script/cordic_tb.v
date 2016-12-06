@@ -70,52 +70,67 @@ module cordic_tb();
       // Mode 1
       mode = 1;
       en=1'b1;
-      x_in = 30000;
-      y_in = 40000;
-      @(posedge clk);
-      x_in = 40000;
-      y_in = 30000;
-      @(posedge clk);
-      x_in =-30000;
-      y_in = 40000;
-      @(posedge clk);
-      x_in =-40000;
-      y_in = 30000;
-      @(posedge clk);
-      x_in = 65535;
-      y_in =-65536;
-      @(posedge clk);
-      x_in = 65535;
-      y_in = 65535;
-      @(posedge clk);
-      x_in =-65536;
-      y_in =-65536;
-      @(posedge clk);
+      x_in = 2**(IN_WIDTH-1)-1;  
+      y_in = 0;                 
+      @(posedge clk);            // 0 degree
+      x_in = 2**(IN_WIDTH-1)-1; 
+      y_in = 2**(IN_WIDTH-1)-1;
+      @(posedge clk);            // 45 degree
+      x_in = 0;
+      y_in = 2**(IN_WIDTH-1)-1;
+      @(posedge clk);            // 90 degree
+      x_in =-2**(IN_WIDTH-1);
+      y_in = 2**(IN_WIDTH-1)-1;
+      @(posedge clk);            // 135 degree
+      x_in =-2**(IN_WIDTH-1);
+      y_in = 0;
+      @(posedge clk);            // 180 degree
+      x_in =-2**(IN_WIDTH-1);
+      y_in =-2**(IN_WIDTH-1);
+      @(posedge clk);            // -135 degree
+      x_in = 0;
+      y_in =-2**(IN_WIDTH-1);
+      @(posedge clk);            // -90 degree
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in =-2**(IN_WIDTH-1);
+      @(posedge clk);            // -45 degree
       en=1'b0;
       mode = 0;
       @(posedge clk);
       // Mode 2
       mode = 2;
       en=1'b1;
-      x_in = 0;
-      y_in =-50000;
-      z_in = 65535; // 90 degree
-      @(posedge clk);
-      x_in = 35355;
-      y_in =-35355;
-      z_in = 32767; // 45 degree
-      @(posedge clk);
-      x_in = 50000;
+      x_in = 2**(IN_WIDTH-1)-1;
       y_in = 0;
-      z_in = 0;     // 0 degree
+      z_in = 0;                 // 0 degree
       @(posedge clk);
-      x_in = 35355;
-      y_in = 35355;
-      z_in =-32768; //-45 degree
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in = 0;
+      z_in = {3'b000,{IN_WIDTH-3{1'b1}}}; // 45 degree
       @(posedge clk);
-      x_in = 0;
-      y_in = 50000;
-      z_in =-65536; //-90 degree
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in = 0;
+      z_in = {3'b001,{IN_WIDTH-3{1'b1}}}; // 90 degree
+      @(posedge clk);
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in = 0;
+      z_in = {3'b010,{IN_WIDTH-3{1'b1}}}; // 135 degree
+      @(posedge clk);
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in = 0;
+      z_in = {3'b011,{IN_WIDTH-3{1'b1}}}; // 180 degree
+      @(posedge clk);
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in = 0;
+      z_in = {3'b101,{IN_WIDTH-3{1'b0}}}+1'b1; //-135 degree
+      @(posedge clk);
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in = 0;
+      z_in = {3'b110,{IN_WIDTH-3{1'b0}}}+1'b1; // -90 degree
+      @(posedge clk);
+      x_in = 2**(IN_WIDTH-1)-1;
+      y_in = 0;
+      z_in = {3'b111,{IN_WIDTH-3{1'b0}}}+1'b1; // -45 degree
       @(posedge clk);
       en=1'b0;
       mode = 0;
