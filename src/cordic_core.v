@@ -74,6 +74,7 @@ input                                                 clk;
 input                                                 rst_n;
     
 input                                                 rotnvec_mode;
+input                                                 linear_mode;
 input   [1:0]                                         quadrant;
 input   [(XY_WIDTH-1):0]                              x_in;
 input   [(XY_WIDTH-1):0]                              y_in;

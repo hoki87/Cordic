@@ -97,6 +97,7 @@ module cordic_tb();
       en=1'b0;
       mode = 0;
       @(posedge clk);
+      
       // Mode 2
       mode = 2;
       en=1'b1;

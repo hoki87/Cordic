@@ -1,0 +1,38 @@
+[Open Files]
+Active File Display Mode=1
+Active File Index=1
+Open File Line0=4890
+Open File Line1=1249
+Open File Line2=263
+Open File Line3=3301
+Open File Pos0=12302
+Open File Pos1=2185
+Open File Pos2=660
+Open File Pos3=3528
+Open File Tab Pos0=0
+Open File Tab Pos1=0
+Open File Tab Pos2=1
+Open File Tab Pos3=1
+Open File Window Pos0=0,1,-1,-1,-1,-1,5,27,796,856
+Open File Window Pos1=0,1,-1,-1,-1,-1,5,27,796,856
+Open File Window Pos2=0,1,-1,-1,-1,-1,806,27,1615,856
+Open File Window Pos3=0,1,-1,-1,-1,-1,806,27,1615,856
+Open File0=X:\Cordic\FPGA\src\cordic.v
+Open File1=X:\Cordic\FPGA\src\cordic_inc.v
+Open File2=X:\Cordic\FPGA\script\cordic_tb.v
+Open File3=X:\Cordic\FPGA\src\cordic_top.v
+Open File4=
+Remember Files=1
+
+[Project Information]
+	Project Start=E0070B0005000B000D001500180000003C
+	Working Time=49592
+
+[Open File Tabs]
+Tab0=0,494444,0,1000000
+Tab1=494444,505555,0,1000000
+
+[Folders]
+	.\script\=1
+	.\src\=1
+

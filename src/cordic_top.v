@@ -89,7 +89,7 @@ module cordic_top(
    wire  [(XY_WIDTH-1):0]    y_out_tmp ;  
    wire  [(Z_WIDTH-1):0]     z_out_tmp ;  
 
-   cordic u_cordic(
+   cordic #(IN_WIDTH) u_cordic(
        .clk            (clk            ),
        .rst_n          (rst_n          ),
        
@@ -141,7 +141,8 @@ module cordic_top(
    wire [(XY_WIDTH-1):0] gain_corr_y ;
    wire [(Z_WIDTH-1):0]  gain_corr_z ;
 
-   cordic_gain_corr    u_cordic_gain_corr1(
+   cordic_gain_corr#(IN_WIDTH)
+   u_cordic_gain_corr1(
        .clk                (clk        ),
        .rst_n              (rst_n      ),
                          

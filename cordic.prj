@@ -11,5 +11,7 @@
 	Create Tagfile=0
 [Files]
 	0=.\src\
+	1=.\script\
 [Group Filter]
 	.\src\=*.v;*.vdh;*.sdc
+	.\script\=*.v;*.tcl

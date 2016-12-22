@@ -191,7 +191,7 @@ always  @(posedge clk or negedge rst_n)
 assign x_in_neg                                       = x_in_r[(XY_WIDTH-1)];
 assign y_in_neg                                       = y_in_r[(XY_WIDTH-1)];
 
-ip_quad_info                                          u_ip_quad_info 
+ip_quad_info #(IN_WIDTH)                              u_ip_quad_info 
 (
     .rotnvec_mode                                     (rotnvec_mode_r),
     
@@ -210,7 +210,7 @@ ip_quad_info                                          u_ip_quad_info
 // Preforms any quadrant adjustment.
 //
 //----------------------------------------------------------------------------------------------------------------------
-ip_quad_adj                                           u_ip_quad_adj
+ip_quad_adj #(IN_WIDTH)                               u_ip_quad_adj
   (
     .rotnvec_mode                                     (rotnvec_mode_r),
     
@@ -231,7 +231,7 @@ ip_quad_adj                                           u_ip_quad_adj
 // CORDIC IMPLEMENTATION
 //
 //----------------------------------------------------------------------------------------------------------------------
-cordic_core                                           u_cordic_core
+cordic_core #(IN_WIDTH)                               u_cordic_core
   (
     .clk                                              (clk),
     .rst_n                                            (rst_n),
@@ -257,7 +257,7 @@ cordic_core                                           u_cordic_core
 // Quadrant adjustment
 //
 //----------------------------------------------------------------------------------------------------------------------
-op_quad_adj                                           u_op_quad_adj
+op_quad_adj #(IN_WIDTH)                               u_op_quad_adj
   (
     .rotnvec_mode                                     (rotnvec_mode_pipe),
     .quadrant                                         (quad_out_pipe),

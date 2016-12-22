@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "X:/Cordic/FPGA/xilinx_prj/cordic_top.xst" -ofn "X:/Cordic/FPGA/xilinx_prj/cordic_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-2 cordic_top.ngc cordic_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o cordic_top_map.ncd cordic_top.ngd cordic_top.pcf 
+par -w -intstyle ise -ol high -mt off cordic_top_map.ncd cordic_top.ncd cordic_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml cordic_top.twx cordic_top.ncd -o cordic_top.twr cordic_top.pcf 
